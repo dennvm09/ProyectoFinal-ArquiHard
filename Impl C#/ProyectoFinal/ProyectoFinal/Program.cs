@@ -63,6 +63,10 @@ namespace ProyectoFinal
             a.Save(ruta);
         }
 
+
+        /*
+        * VERSIÓN 3 DEL ALGORITMO
+        */
         static void version2(String src, int profundidad, int tamanio)
         {
             /*
@@ -75,17 +79,11 @@ namespace ProyectoFinal
             Variable de color 
             */
             Color color;
-            /*
-            Variable de tiempo
-            */
+           
             long tiempo = 0;
             Stopwatch stopWatch = new Stopwatch();
             stopWatch.Restart();
             stopWatch.Start();
-
-            /*
-            Ciclos for para iniciar el algotimo de conversion.
-            */
 
             /*
             Ciclo No. 1
@@ -138,6 +136,120 @@ namespace ProyectoFinal
             a.Save(ruta);
         }
 
+        /*
+        * VERSIÓN 3 DEL ALGORITMO
+        */
+        static void version3(String src, int profundidad, int tamanio)
+        {
+            /*
+            Variable donde se carga los bits de la imagen.
+            */
+            Bitmap imagenOriginal = new Bitmap(src);
+
+            Bitmap a = imagenOriginal;
+          
+            Color color;
+           
+            long tiempo = 0;
+            Stopwatch stopWatch = new Stopwatch();
+            stopWatch.Restart();
+            stopWatch.Start();
+
+            /*
+            Ciclo for para iniciar el algotimo de conversion.
+            */
+
+            for (int j = 0; j < a.Height - 1; j++)
+            {
+                for (int i = 0; i < a.Width - 1; i++)
+                {
+                    color = a.GetPixel(i, j);
+                    color = Color.FromArgb((255 - color.R), (255 - color.G), (255 - color.B));
+                    a.SetPixel(i, j, color);
+                }
+            }
+           
+            stopWatch.Stop();
+
+           
+            tiempo = (long)(stopWatch.Elapsed.TotalMilliseconds * 1000000);
+            Console.WriteLine("Algoritmo Version 2: " + tiempo);
+
+            /*
+            Guardamos la imagen en la carpeta correspondiente
+            */
+            string ruta = @"C:\Users\estudiante\source\repos\PF_ArquitecturaHardware\Images\ImagesInver\imgReverse" + profundidad + " - " + tamanio + ".bmp";
+
+            a.Save(ruta);
+        }
+
+
+        static void version4(String src, int profundidad, int tamanio)
+        {
+
+            /*
+            Variable donde se carga los bits de la imagen.
+            */
+            Bitmap imagenOriginal = new Bitmap(src);
+
+            Bitmap a = imagenOriginal;
+            /*
+            Variable de color 
+            */
+            Color color;
+           
+            long tiempo = 0;
+            Stopwatch stopWatch = new Stopwatch();
+            stopWatch.Restart();
+            stopWatch.Start();
+
+
+
+            /*
+            Ciclos for para iniciar el algotimo de conversion.
+            */
+
+            /*
+            Ciclo No. 1
+            */
+            for (int i = 0; i < a.Height - 1; i++)
+            {
+                for (int j = 0; j < a.Width - 1; j++)
+                {
+                    color = a.GetPixel(i, j);
+                    color = Color.FromArgb(255, (255 - color.R), color.G, color.B);
+                    a.SetPixel(i, j, color);
+                }
+            }
+
+            /*
+            Ciclo No. 2
+            */
+            for (int i = 0; i < a.Height - 1; i++)
+            {
+                for (int j = 0; j < a.Width - 1; j++)
+                {
+                    color = a.GetPixel(i, j);
+                    color = Color.FromArgb(255, color.R, (255 - color.G), (255 - color.B));
+                    a.SetPixel(i, j, color);
+                }
+            }
+            
+            stopWatch.Stop();
+
+          
+            tiempo = (long)(stopWatch.Elapsed.TotalMilliseconds * 1000000);
+            Console.WriteLine("Algoritmo Version 2: " + tiempo);
+
+            /*
+            Guardamos la imagen en la carpeta correspondiente
+            */
+            string ruta = @"C:\Users\estudiante\source\repos\PF_ArquitecturaHardware\Images\ImagesInver\imgReverse" + profundidad + " - " + tamanio + ".bmp";
+
+            a.Save(ruta);
+        }
+
+
         static void Main(string[] args)
         {
 
@@ -155,14 +267,14 @@ namespace ProyectoFinal
 
             /*
              Variable que almacena la profundidad de la imagen que será utilizada. 
-             Pueden ser los siguientes valores: 8, 16, 24, 32
+             Pueden ser los siguientes valores: 8, 24, 32
              */
             int profundidad = 32;
 
             /*
              Variable que almacena la ruta de la imagen que será utilizada.
              */
-            String rutaImagen = @"C:\Users\estudiante\source\repos\PF_ArquitecturaHardware\Images\T[" + tamanioImagen + "]P[" + profundidad + "].png";
+            String rutaImagen = @"C:\Users\estudiante\source\repos\PF_ArquitecturaHardware\Images\T[" + tamanioImagen + "]P[" + profundidad + "].bmp";
 
 
             int i = 0;
