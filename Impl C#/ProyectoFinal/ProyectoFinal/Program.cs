@@ -46,16 +46,89 @@ namespace ProyectoFinal
                     a.SetPixel(i, j, color);
                 }
             }
-            /*
-            Detenemos el reloj
-            */
+           
             stopWatch.Stop();
 
             /*
-            Recolectamos la información
+            Se calcula el tiempo
             */
             tiempo = (long)(stopWatch.Elapsed.TotalMilliseconds * 1000000);
             Console.WriteLine("Algoritmo Version 1: " + tiempo);
+
+            /*
+            Guardamos la imagen en la carpeta correspondiente
+            */
+            string ruta = @"C:\Users\estudiante\source\repos\PF_ArquitecturaHardware\Images\ImagesInver\imgReverse" + profundidad + " - " + tamanio + ".bmp";
+
+            a.Save(ruta);
+        }
+
+        static void version2(String src, int profundidad, int tamanio)
+        {
+            /*
+            Variable donde se carga los bits de la imagen.
+            */
+            Bitmap imagenOriginal = new Bitmap(src);
+
+            Bitmap a = imagenOriginal;
+            /*
+            Variable de color 
+            */
+            Color color;
+            /*
+            Variable de tiempo
+            */
+            long tiempo = 0;
+            Stopwatch stopWatch = new Stopwatch();
+            stopWatch.Restart();
+            stopWatch.Start();
+
+            /*
+            Ciclos for para iniciar el algotimo de conversion.
+            */
+
+            /*
+            Ciclo No. 1
+            */
+            for (int i = 0; i < a.Height - 1; i++)
+            {
+                for (int j = 0; j < a.Width - 1; j++)
+                {
+                    color = a.GetPixel(i, j);
+                    color = Color.FromArgb(255, (255 - color.R), color.G, color.B);
+                    a.SetPixel(i, j, color);
+                }
+            }
+            /*
+            Ciclo No. 2
+            */
+            for (int i = 0; i < a.Height - 1; i++)
+            {
+                for (int j = 0; j < a.Width - 1; j++)
+                {
+                    color = a.GetPixel(i, j);
+                    color = Color.FromArgb(255, color.R, (255 - color.G), color.B);
+                    a.SetPixel(i, j, color);
+                }
+            }
+            /*
+            Ciclo No. 3.
+            */
+            for (int i = 0; i < a.Height - 1; i++)
+            {
+                for (int j = 0; j < a.Width - 1; j++)
+                {
+                    color = a.GetPixel(i, j);
+                    color = Color.FromArgb(255, color.R, -color.G, (255 - color.B));
+                    a.SetPixel(i, j, color);
+                }
+            }
+
+        
+            stopWatch.Stop();
+
+            tiempo = (long)(stopWatch.Elapsed.TotalMilliseconds * 1000000);
+            Console.WriteLine("Algoritmo Version 2: " + tiempo);
 
             /*
             Guardamos la imagen en la carpeta correspondiente
