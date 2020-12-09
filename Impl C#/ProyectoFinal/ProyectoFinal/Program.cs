@@ -9,6 +9,8 @@ namespace ProyectoFinal
     class Program
     {
 
+        public static int r = 1;
+
         /*
          * VERSIÓN 1 DEL ALGORITMO
          */
@@ -22,6 +24,7 @@ namespace ProyectoFinal
             Bitmap imagenOriginal = new Bitmap(src);
 
             Bitmap a = imagenOriginal;
+           
             /*
             Variable de color 
             */
@@ -46,26 +49,25 @@ namespace ProyectoFinal
                     a.SetPixel(i, j, color);
                 }
             }
-           
+
             stopWatch.Stop();
 
             /*
             Se calcula el tiempo
             */
             tiempo = (long)(stopWatch.Elapsed.TotalMilliseconds * 1000000);
-            Console.WriteLine("Algoritmo Version 1: " + tiempo);
+            Console.WriteLine("Resultado " + r + ": " + tiempo);
 
             /*
             Guardamos la imagen en la carpeta correspondiente
             */
-            string ruta = @"C:\Users\estudiante\source\repos\PF_ArquitecturaHardware\Images\ImagesInver\imgReverse" + profundidad + " - " + tamanio + ".bmp";
-
+            string ruta = @"C:\Users\estudiante\source\repos\PF_ArquitecturaHardware\Images\ImagesInver\imgReverse_T[" + tamanio + "]P[" + profundidad + "].bmp";
             a.Save(ruta);
         }
 
 
         /*
-        * VERSIÓN 3 DEL ALGORITMO
+        * VERSIÓN 2 DEL ALGORITMO
         */
         static void version2(String src, int profundidad, int tamanio)
         {
@@ -79,7 +81,7 @@ namespace ProyectoFinal
             Variable de color 
             */
             Color color;
-           
+
             long tiempo = 0;
             Stopwatch stopWatch = new Stopwatch();
             stopWatch.Restart();
@@ -117,22 +119,21 @@ namespace ProyectoFinal
                 for (int j = 0; j < a.Width - 1; j++)
                 {
                     color = a.GetPixel(i, j);
-                    color = Color.FromArgb(255, color.R, -color.G, (255 - color.B));
+                    color = Color.FromArgb(255, color.R, color.G, (255 - color.B));
                     a.SetPixel(i, j, color);
                 }
             }
 
-        
+
             stopWatch.Stop();
 
             tiempo = (long)(stopWatch.Elapsed.TotalMilliseconds * 1000000);
-            Console.WriteLine("Algoritmo Version 2: " + tiempo);
+            Console.WriteLine("Resultado " + r + ": " + tiempo);
 
             /*
             Guardamos la imagen en la carpeta correspondiente
             */
-            string ruta = @"C:\Users\estudiante\source\repos\PF_ArquitecturaHardware\Images\ImagesInver\imgReverse" + profundidad + " - " + tamanio + ".bmp";
-
+            string ruta = @"C:\Users\estudiante\source\repos\PF_ArquitecturaHardware\Images\ImagesInver\imgReverse_T[" + tamanio + "]P[" + profundidad + "].bmp";
             a.Save(ruta);
         }
 
@@ -147,9 +148,9 @@ namespace ProyectoFinal
             Bitmap imagenOriginal = new Bitmap(src);
 
             Bitmap a = imagenOriginal;
-          
+
             Color color;
-           
+
             long tiempo = 0;
             Stopwatch stopWatch = new Stopwatch();
             stopWatch.Restart();
@@ -168,21 +169,23 @@ namespace ProyectoFinal
                     a.SetPixel(i, j, color);
                 }
             }
-           
+
             stopWatch.Stop();
 
-           
+
             tiempo = (long)(stopWatch.Elapsed.TotalMilliseconds * 1000000);
-            Console.WriteLine("Algoritmo Version 2: " + tiempo);
+            Console.WriteLine("Resultado " + r + ": " + tiempo);
 
             /*
             Guardamos la imagen en la carpeta correspondiente
             */
-            string ruta = @"C:\Users\estudiante\source\repos\PF_ArquitecturaHardware\Images\ImagesInver\imgReverse" + profundidad + " - " + tamanio + ".bmp";
-
+            string ruta = @"C:\Users\estudiante\source\repos\PF_ArquitecturaHardware\Images\ImagesInver\imgReverse_T[" + tamanio + "]P[" + profundidad + "].bmp";
             a.Save(ruta);
         }
 
+        /*
+         * VERSIÓN 4 DEL ALGORITMO
+         */
 
         static void version4(String src, int profundidad, int tamanio)
         {
@@ -197,7 +200,7 @@ namespace ProyectoFinal
             Variable de color 
             */
             Color color;
-           
+
             long tiempo = 0;
             Stopwatch stopWatch = new Stopwatch();
             stopWatch.Restart();
@@ -234,18 +237,85 @@ namespace ProyectoFinal
                     a.SetPixel(i, j, color);
                 }
             }
-            
+
             stopWatch.Stop();
 
-          
+
             tiempo = (long)(stopWatch.Elapsed.TotalMilliseconds * 1000000);
-            Console.WriteLine("Algoritmo Version 2: " + tiempo);
+            Console.WriteLine("Resultado " + r + ": " + tiempo);
 
             /*
             Guardamos la imagen en la carpeta correspondiente
             */
-            string ruta = @"C:\Users\estudiante\source\repos\PF_ArquitecturaHardware\Images\ImagesInver\imgReverse" + profundidad + " - " + tamanio + ".bmp";
+            string ruta = @"C:\Users\estudiante\source\repos\PF_ArquitecturaHardware\Images\ImagesInver\imgReverse_T[" + tamanio + "]P[" + profundidad + "].bmp";
+            a.Save(ruta);
+        }
 
+        /*
+         * VERSIÓN 5 DEL ALGORITMO
+         */
+        static void version5(String src, int profundidad, int tamanio)
+        {
+            /*
+            Variable donde se carga los bits de la imagen.
+            */
+            Bitmap imagenOriginal = new Bitmap(src);
+
+            Bitmap a = imagenOriginal;
+            /*
+            Variable de color 
+            */
+            Color color;
+            /*
+            Variable de tiempo
+            */
+            long tiempo = 0;
+            Stopwatch stopWatch = new Stopwatch();
+            stopWatch.Restart();
+            stopWatch.Start();
+
+            /*
+            Ciclos for para iniciar el algotimo de conversion.
+            */
+
+            for (int i = 0; i < a.Height - 2; i += 2)
+            {
+                for (int j = 0; j < a.Width - 2; j += 2)
+                {
+                    color = a.GetPixel(i, j);
+                    color = Color.FromArgb(255, (255 - color.R), (255 - color.G), (255 - color.B));
+                    a.SetPixel(i, j, color);
+
+                    color = a.GetPixel(i, j + 1);
+                    color = Color.FromArgb(255, (255 - color.R), (255 - color.G), (255 - color.B));
+                    a.SetPixel(i, j + 1, color);
+
+                    color = a.GetPixel(i + 1, j);
+                    color = Color.FromArgb(255, (255 - color.R), (255 - color.G), (255 - color.B));
+                    a.SetPixel(i + 1, j, color);
+
+                    color = a.GetPixel(i + 1, j + 1);
+                    color = Color.FromArgb(255, (255 - color.R), (255 - color.G), (255 - color.B));
+                    a.SetPixel(i + 1, j + 1, color);
+
+                }
+            }
+
+            /*
+            Detenemos el reloj
+            */
+            stopWatch.Stop();
+
+            /*
+            Recolectamos la información
+            */
+            tiempo = (long)(stopWatch.Elapsed.TotalMilliseconds * 1000000);
+            Console.WriteLine("Resultado " + r + ": " + tiempo);
+
+            /*
+            Guardamos la imagen en la carpeta correspondiente
+            */
+            string ruta = @"C:\Users\estudiante\source\repos\PF_ArquitecturaHardware\Images\ImagesInver\imgReverse_T[" + tamanio + "]P[" + profundidad + "].bmp";
             a.Save(ruta);
         }
 
@@ -263,7 +333,7 @@ namespace ProyectoFinal
              Variable que almacena el tamanio de la imagen que será utilizada. 
              Pueden ser los siguientes valores: 32, 64, 160, 240, 380, 512, 1500, 2000
              */
-            int tamanioImagen = 160;
+            int tamanioImagen = 64;
 
             /*
              Variable que almacena la profundidad de la imagen que será utilizada. 
@@ -277,51 +347,52 @@ namespace ProyectoFinal
             String rutaImagen = @"C:\Users\estudiante\source\repos\PF_ArquitecturaHardware\Images\T[" + tamanioImagen + "]P[" + profundidad + "].bmp";
 
 
-            int i = 0;
+            //int i = 0;
 
-
-            while (i < 3)
+            Console.WriteLine("VERSIÓN DEL ALGORITMO: 2 \nTAMAÑO IMAGEN: " + tamanioImagen + "px\nPROFUNDIDAD: " + profundidad + "bits");
+            while (r <= 3)
             {
 
                 switch (versionAlgoritmo)
                 {
                     case 1:
                         version1(rutaImagen, profundidad, tamanioImagen);
-                        i++;
+                        r++;
                         break;
                     case 2:
                         version2(rutaImagen, profundidad, tamanioImagen);
-                        i++;
+                        r++;
                         break;
                     case 3:
                         version3(rutaImagen, profundidad, tamanioImagen);
-                        i++;
+                        r++;
                         break;
                     case 4:
                         version4(rutaImagen, profundidad, tamanioImagen);
-                        i++;
+                        r++;
                         break;
                     case 5:
                         version5(rutaImagen, profundidad, tamanioImagen);
-                        i++;
+                        r++;
                         break;
                     default:
                         Console.WriteLine("El número de versión del algoritmo no es válido.");
-                        i = 3;
+                        r = 4;
                         break;
 
                 }
 
             }
 
-                
 
 
-            
+
+
 
 
 
 
 
         }
+    }
 }
