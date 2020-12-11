@@ -178,26 +178,48 @@ public class BitMapImageTurn {
 	    				"src/images/1300x975.jpg", "src/images/1600x1200.jpg", "src/images/1900x1425.jpg", 
 	    				"src/images/2200x1650.jpg",	"src/images/2500x1875.jpg"};
 	    		for (int i = 0; i < paths.length; i++) {
-	    			System.out.printf("\nTIEMPOS POR ALGORITMO PARA LA IMAGEN DE TAMAÑO %s \n",paths[i].substring(11, paths[i].length()-4));
+	    			String imageT="";
+	    			if(paths[i].substring(11, paths[i].length()-4).equals("400x300")) {
+	    				imageT="T1";
+	    			}else if(paths[i].substring(11, paths[i].length()-4).equals("700x525")) {
+	    				imageT="T2";
+	    			} else if(paths[i].substring(11, paths[i].length()-4).equals("1000x750")) {
+	    				imageT="T3";
+	    			} else if(paths[i].substring(11, paths[i].length()-4).equals("1300x975")) {
+	    				imageT="T4";
+	    			} else if(paths[i].substring(11, paths[i].length()-4).equals("1600x1200")) {
+	    				imageT="T5";
+	    			} else if(paths[i].substring(11, paths[i].length()-4).equals("1900x1425")) {
+	    				imageT="T6";
+	    			} else if(paths[i].substring(11, paths[i].length()-4).equals("2200x1650")) {
+	    				imageT="T7";
+	    			} else if(paths[i].substring(11, paths[i].length()-4).equals("2500x1875")) {
+	    				imageT="T8";
+	    			} 
 	    			long startTime = System.currentTimeMillis();
 					inv.algorithm1(paths[i]);
 					long endTime = System.currentTimeMillis();
-					System.out.printf("Algoritmo 1: %o Milisegunsos\n", endTime - startTime);
+					System.out.printf("Algoritmo 1;%s;Equipo1;Java;%o\n", imageT, endTime - startTime);
 					
 					startTime = System.currentTimeMillis();
 					inv.algorithm2(paths[i]);
 					endTime = System.currentTimeMillis();
-					System.out.printf("Algoritmo 2: %o Milisegunsos\n", endTime - startTime);
+					System.out.printf("Algoritmo 2;%s;Equipo1;Java;%o\n", imageT, endTime - startTime);
 					
 					startTime = System.currentTimeMillis();
 					inv.algorithm3(paths[i]);
 					endTime = System.currentTimeMillis();
-					System.out.printf("Algoritmo 3: %o Milisegunsos\n", endTime - startTime);
+					System.out.printf("Algoritmo 3;%s;Equipo1;Java;%o\n", imageT, endTime - startTime);
 					
 					startTime = System.currentTimeMillis();
 					inv.algorithm4(paths[i]);
 					endTime = System.currentTimeMillis();
-					System.out.printf("Algoritmo 4: %o Milisegunsos\n", endTime - startTime);
+					System.out.printf("Algoritmo 4;%s;Equipo1;Java;%o\n", imageT, endTime - startTime);
+					
+					startTime = System.currentTimeMillis();
+					inv.algorithm5(paths[i]);
+					endTime = System.currentTimeMillis();
+					System.out.printf("Algoritmo 5;%s;Equipo1;Java;%o\n", imageT, endTime - startTime);
 				}
 			} catch (IOException e) {
 				e.printStackTrace();
