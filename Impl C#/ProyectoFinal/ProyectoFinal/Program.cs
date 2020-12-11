@@ -337,9 +337,9 @@ namespace ProyectoFinal
 
             /*
              Variable que almacena la profundidad de la imagen que será utilizada. 
-             Pueden ser los siguientes valores: 8, 24, 32
+             En este caso es 24, porque es la profundidad de la imagen original
              */
-            int profundidad = 8;
+            int profundidad = 24;
 
             /*
              Variable que almacena la ruta de la imagen que será utilizada.
