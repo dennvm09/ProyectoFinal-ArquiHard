@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Drawing;
 using System.Diagnostics;
+using System.IO;
 using System.Linq;
 
 
@@ -61,8 +62,11 @@ namespace ProyectoFinal
             /*
             Guardamos la imagen en la carpeta correspondiente
             */
-            string ruta = @"C:\Users\estudiante\source\repos\PF_ArquitecturaHardware\Images\ImagesInver\imgReverse_T[" + tamanio + "]P[" + profundidad + "].bmp";
-            a.Save(ruta);
+            String ruta = Path.GetDirectoryName(Process.GetCurrentProcess().MainModule.FileName);
+            String rutaImagen = ruta + @"\Images\ImagesInver\imgReverse_T[" + tamanio + "]P[" + profundidad + "].bmp";
+
+            //string ruta = @"C:\Users\estudiante\source\repos\PF_ArquitecturaHardware\Images\ImagesInver\imgReverse_T[" + tamanio + "]P[" + profundidad + "].bmp";
+            a.Save(rutaImagen);
         }
 
 
@@ -133,8 +137,11 @@ namespace ProyectoFinal
             /*
             Guardamos la imagen en la carpeta correspondiente
             */
-            string ruta = @"C:\Users\estudiante\source\repos\PF_ArquitecturaHardware\Images\ImagesInver\imgReverse_T[" + tamanio + "]P[" + profundidad + "].bmp";
-            a.Save(ruta);
+            String ruta = Path.GetDirectoryName(Process.GetCurrentProcess().MainModule.FileName);
+            String rutaImagen = ruta + @"\Images\ImagesInver\imgReverse_T[" + tamanio + "]P[" + profundidad + "].bmp";
+
+            //string ruta = @"C:\Users\estudiante\source\repos\PF_ArquitecturaHardware\Images\ImagesInver\imgReverse_T[" + tamanio + "]P[" + profundidad + "].bmp";
+            a.Save(rutaImagen);
         }
 
         /*
@@ -179,8 +186,11 @@ namespace ProyectoFinal
             /*
             Guardamos la imagen en la carpeta correspondiente
             */
-            string ruta = @"C:\Users\estudiante\source\repos\PF_ArquitecturaHardware\Images\ImagesInver\imgReverse_T[" + tamanio + "]P[" + profundidad + "].bmp";
-            a.Save(ruta);
+            String ruta = Path.GetDirectoryName(Process.GetCurrentProcess().MainModule.FileName);
+            String rutaImagen = ruta + @"\Images\ImagesInver\imgReverse_T[" + tamanio + "]P[" + profundidad + "].bmp";
+
+            //string ruta = @"C:\Users\estudiante\source\repos\PF_ArquitecturaHardware\Images\ImagesInver\imgReverse_T[" + tamanio + "]P[" + profundidad + "].bmp";
+            a.Save(rutaImagen);
         }
 
         /*
@@ -247,8 +257,11 @@ namespace ProyectoFinal
             /*
             Guardamos la imagen en la carpeta correspondiente
             */
-            string ruta = @"C:\Users\estudiante\source\repos\PF_ArquitecturaHardware\Images\ImagesInver\imgReverse_T[" + tamanio + "]P[" + profundidad + "].bmp";
-            a.Save(ruta);
+            String ruta = Path.GetDirectoryName(Process.GetCurrentProcess().MainModule.FileName);
+            String rutaImagen = ruta + @"\Images\ImagesInver\imgReverse_T[" + tamanio + "]P[" + profundidad + "].bmp";
+
+            //string ruta = @"C:\Users\estudiante\source\repos\PF_ArquitecturaHardware\Images\ImagesInver\imgReverse_T[" + tamanio + "]P[" + profundidad + "].bmp";
+            a.Save(rutaImagen);
         }
 
         /*
@@ -315,8 +328,11 @@ namespace ProyectoFinal
             /*
             Guardamos la imagen en la carpeta correspondiente
             */
-            string ruta = @"C:\Users\estudiante\source\repos\PF_ArquitecturaHardware\Images\ImagesInver\imgReverse_T[" + tamanio + "]P[" + profundidad + "].bmp";
-            a.Save(ruta);
+            String ruta = Path.GetDirectoryName(Process.GetCurrentProcess().MainModule.FileName);
+            String rutaImagen = ruta + @"\Images\ImagesInver\imgReverse_T[" + tamanio + "]P[" + profundidad + "].bmp";
+
+            //string ruta = @"C:\Users\estudiante\source\repos\PF_ArquitecturaHardware\Images\ImagesInver\imgReverse_T[" + tamanio + "]P[" + profundidad + "].bmp";
+            a.Save(rutaImagen);
         }
 
 
@@ -338,18 +354,19 @@ namespace ProyectoFinal
             /*
              Variable que almacena la profundidad de la imagen que será utilizada. 
              En este caso es 24, porque es la profundidad de la imagen original
+             Para nuestro experimiento no es necesaria la profundidad, sin embargo, más adelante puede ser un factor de estudio.
              */
             int profundidad = 24;
 
             /*
              Variable que almacena la ruta de la imagen que será utilizada.
              */
-            String rutaImagen = @"C:\Users\estudiante\source\repos\PF_ArquitecturaHardware\Images\T[" + tamanioImagen + "]P[" + profundidad + "].bmp";
-
+            String ruta = Path.GetDirectoryName(Process.GetCurrentProcess().MainModule.FileName);
+            String rutaImagen = ruta + @"\Images\T[" + tamanioImagen + "]P[" + profundidad + "].bmp";
 
             //int i = 0;
 
-            Console.WriteLine("VERSIÓN DEL ALGORITMO: 2 \nTAMAÑO IMAGEN: " + tamanioImagen + "px\nPROFUNDIDAD: " + profundidad + "bits");
+            Console.WriteLine("VERSIÓN DEL ALGORITMO: " + versionAlgoritmo + "\nTAMAÑO IMAGEN: " + tamanioImagen + "px");
             while (r <= 3)
             {
 
