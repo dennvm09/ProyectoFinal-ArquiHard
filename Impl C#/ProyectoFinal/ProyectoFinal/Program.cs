@@ -347,9 +347,9 @@ namespace ProyectoFinal
 
             /*
              Variable que almacena el tamanio de la imagen que será utilizada. 
-             Pueden ser los siguientes valores: 32, 64, 160, 240, 380, 512, 1500, 2000
+             Pueden ser los siguientes valores: 400, 700, 1000, 1300, 1600, 1900, 2200, 2500
              */
-            int tamanioImagen = 64;
+            int tamanioImagen = 400;
 
             /*
              Variable que almacena la profundidad de la imagen que será utilizada. 
