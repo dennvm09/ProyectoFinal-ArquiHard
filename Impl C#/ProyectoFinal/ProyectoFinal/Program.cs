@@ -343,13 +343,13 @@ namespace ProyectoFinal
              Variable que almacena la version del algoritmo. 
              Valores enteros entre 1 y 5.
              */
-            int versionAlgoritmo = 1;
+            int versionAlgoritmo = 5;
 
             /*
              Variable que almacena el tamanio de la imagen que será utilizada. 
              Pueden ser los siguientes valores: 400, 700, 1000, 1300, 1600, 1900, 2200, 2500
              */
-            int tamanioImagen = 400;
+            int tamanioImagen = 2500;
 
             /*
              Variable que almacena la profundidad de la imagen que será utilizada. 
