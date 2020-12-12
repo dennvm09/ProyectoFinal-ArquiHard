@@ -174,52 +174,58 @@ public class BitMapImageTurn {
 	    public static void main(String[] args) {
 	    	try {
 	    		BitMapImageTurn inv=new BitMapImageTurn();
-	    		String[] paths= {"src/images/400x300.jpg", "src/images/700x525.jpg", "src/images/1000x750.jpg",
-	    				"src/images/1300x975.jpg", "src/images/1600x1200.jpg", "src/images/1900x1425.jpg", 
-	    				"src/images/2200x1650.jpg",	"src/images/2500x1875.jpg"};
+	    		
+	    		String[] paths= {"src/imgs/T[400]P[24].bmp","src/imgs/T[700]P[24].bmp","src/imgs/T[1000]P[24].bmp",
+	    				"src/imgs/T[1300]P[24].bmp","src/imgs/T[1600]P[24].bmp","src/imgs/T[1900]P[24].bmp",
+	    				"src/imgs/T[2200]P[24].bmp","src/imgs/T[2500]P[24].bmp"};
 	    		for (int i = 0; i < paths.length; i++) {
 	    			String imageT="";
-	    			if(paths[i].substring(11, paths[i].length()-4).equals("400x300")) {
+	    			if(paths[i].substring(9, paths[i].length()-4).equals("T[400]P[24]")) {
 	    				imageT="T1";
-	    			}else if(paths[i].substring(11, paths[i].length()-4).equals("700x525")) {
+	    			}else if(paths[i].substring(9, paths[i].length()-4).equals("T[700]P[24]")) {
 	    				imageT="T2";
-	    			} else if(paths[i].substring(11, paths[i].length()-4).equals("1000x750")) {
+	    			} else if(paths[i].substring(9, paths[i].length()-4).equals("T[1000]P[24]")) {
 	    				imageT="T3";
-	    			} else if(paths[i].substring(11, paths[i].length()-4).equals("1300x975")) {
+	    			} else if(paths[i].substring(9, paths[i].length()-4).equals("T[1300]P[24]")) {
 	    				imageT="T4";
-	    			} else if(paths[i].substring(11, paths[i].length()-4).equals("1600x1200")) {
+	    			} else if(paths[i].substring(9, paths[i].length()-4).equals("T[1600]P[24]")) {
 	    				imageT="T5";
-	    			} else if(paths[i].substring(11, paths[i].length()-4).equals("1900x1425")) {
+	    			} else if(paths[i].substring(9, paths[i].length()-4).equals("T[1900]P[24]")) {
 	    				imageT="T6";
-	    			} else if(paths[i].substring(11, paths[i].length()-4).equals("2200x1650")) {
+	    			} else if(paths[i].substring(9, paths[i].length()-4).equals("T[2200]P[24]")) {
 	    				imageT="T7";
-	    			} else if(paths[i].substring(11, paths[i].length()-4).equals("2500x1875")) {
+	    			} else if(paths[i].substring(9, paths[i].length()-4).equals("T[2500]P[24]")) {
 	    				imageT="T8";
-	    			} 
-	    			long startTime = System.currentTimeMillis();
-					inv.algorithm1(paths[i]);
-					long endTime = System.currentTimeMillis();
-					System.out.printf("Algoritmo 1;%s;Equipo1;Java;%o\n", imageT, endTime - startTime);
-					
-					startTime = System.currentTimeMillis();
-					inv.algorithm2(paths[i]);
-					endTime = System.currentTimeMillis();
-					System.out.printf("Algoritmo 2;%s;Equipo1;Java;%o\n", imageT, endTime - startTime);
-					
-					startTime = System.currentTimeMillis();
-					inv.algorithm3(paths[i]);
-					endTime = System.currentTimeMillis();
-					System.out.printf("Algoritmo 3;%s;Equipo1;Java;%o\n", imageT, endTime - startTime);
-					
-					startTime = System.currentTimeMillis();
-					inv.algorithm4(paths[i]);
-					endTime = System.currentTimeMillis();
-					System.out.printf("Algoritmo 4;%s;Equipo1;Java;%o\n", imageT, endTime - startTime);
-					
-					startTime = System.currentTimeMillis();
-					inv.algorithm5(paths[i]);
-					endTime = System.currentTimeMillis();
-					System.out.printf("Algoritmo 5;%s;Equipo1;Java;%o\n", imageT, endTime - startTime);
+	    			}
+	    			int c=3;
+	    			while(c>0){
+	    				long startTime = System.currentTimeMillis();
+						inv.algorithm1(paths[i]);
+						long endTime = System.currentTimeMillis();
+						System.out.printf("1;Java;%s;1;%o\n", imageT, endTime - startTime);
+						
+						startTime = System.currentTimeMillis();
+						inv.algorithm2(paths[i]);
+						endTime = System.currentTimeMillis();
+						System.out.printf("1;Java;%s;2;%o\n", imageT, endTime - startTime);
+						
+						startTime = System.currentTimeMillis();
+						inv.algorithm3(paths[i]);
+						endTime = System.currentTimeMillis();
+						System.out.printf("1;Java;%s;3;%o\n", imageT, endTime - startTime);
+						
+						startTime = System.currentTimeMillis();
+						inv.algorithm4(paths[i]);
+						endTime = System.currentTimeMillis();
+						System.out.printf("1;Java;%s;4;%o\n", imageT, endTime - startTime);
+						
+						startTime = System.currentTimeMillis();
+						inv.algorithm5(paths[i]);
+						endTime = System.currentTimeMillis();
+						System.out.printf("1;Java;%s;5;%o\n", imageT, endTime - startTime);
+						
+						c--;
+	    			}
 				}
 			} catch (IOException e) {
 				e.printStackTrace();
