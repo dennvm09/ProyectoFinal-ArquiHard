@@ -19,28 +19,19 @@ namespace ProyectoFinal
         static void version1(String src, int profundidad, int tamanio)
         {
 
-            /*
-            Variable donde se carga los bits de la imagen.
-            */
-            Bitmap imagenOriginal = new Bitmap(src);
+            
+            Bitmap imgParam = new Bitmap(src);
 
-            Bitmap a = imagenOriginal;
+            Bitmap a = imgParam;
            
-            /*
-            Variable de color 
-            */
             Color color;
-            /*
-            Variable de tiempo
-            */
+           
             long tiempo = 0;
             Stopwatch stopWatch = new Stopwatch();
             stopWatch.Restart();
             stopWatch.Start();
 
-            /*
-            Ciclo for para iniciar el algotimo de conversion.
-            */
+           
             for (int i = 0; i < a.Height - 1; i++)
             {
                 for (int j = 0; j < a.Width - 1; j++)
@@ -53,15 +44,10 @@ namespace ProyectoFinal
 
             stopWatch.Stop();
 
-            /*
-            Se calcula el tiempo
-            */
             tiempo = (long)(stopWatch.Elapsed.TotalMilliseconds);
             Console.WriteLine("Resultado " + r + ": " + tiempo);
 
-            /*
-            Guardamos la imagen en la carpeta correspondiente
-            */
+            
             String ruta = Path.GetDirectoryName(Process.GetCurrentProcess().MainModule.FileName);
             String rutaImagen = ruta + @"\Images\ImagesInver\imgReverse_T[" + tamanio + "]P[" + profundidad + "].bmp";
 
@@ -75,15 +61,11 @@ namespace ProyectoFinal
         */
         static void version2(String src, int profundidad, int tamanio)
         {
-            /*
-            Variable donde se carga los bits de la imagen.
-            */
-            Bitmap imagenOriginal = new Bitmap(src);
+            
+            Bitmap imgParam = new Bitmap(src);
 
-            Bitmap a = imagenOriginal;
-            /*
-            Variable de color 
-            */
+            Bitmap a = imgParam;
+            
             Color color;
 
             long tiempo = 0;
@@ -91,9 +73,7 @@ namespace ProyectoFinal
             stopWatch.Restart();
             stopWatch.Start();
 
-            /*
-            Ciclo No. 1
-            */
+            
             for (int i = 0; i < a.Height - 1; i++)
             {
                 for (int j = 0; j < a.Width - 1; j++)
@@ -103,9 +83,7 @@ namespace ProyectoFinal
                     a.SetPixel(i, j, color);
                 }
             }
-            /*
-            Ciclo No. 2
-            */
+            
             for (int i = 0; i < a.Height - 1; i++)
             {
                 for (int j = 0; j < a.Width - 1; j++)
@@ -115,9 +93,7 @@ namespace ProyectoFinal
                     a.SetPixel(i, j, color);
                 }
             }
-            /*
-            Ciclo No. 3.
-            */
+            
             for (int i = 0; i < a.Height - 1; i++)
             {
                 for (int j = 0; j < a.Width - 1; j++)
@@ -134,9 +110,7 @@ namespace ProyectoFinal
             tiempo = (long)(stopWatch.Elapsed.TotalMilliseconds);
             Console.WriteLine("Resultado " + r + ": " + tiempo);
 
-            /*
-            Guardamos la imagen en la carpeta correspondiente
-            */
+           
             String ruta = Path.GetDirectoryName(Process.GetCurrentProcess().MainModule.FileName);
             String rutaImagen = ruta + @"\Images\ImagesInver\imgReverse_T[" + tamanio + "]P[" + profundidad + "].bmp";
 
@@ -149,12 +123,10 @@ namespace ProyectoFinal
         */
         static void version3(String src, int profundidad, int tamanio)
         {
-            /*
-            Variable donde se carga los bits de la imagen.
-            */
-            Bitmap imagenOriginal = new Bitmap(src);
+            
+            Bitmap imgParam = new Bitmap(src);
 
-            Bitmap a = imagenOriginal;
+            Bitmap a = imgParam;
 
             Color color;
 
@@ -163,9 +135,7 @@ namespace ProyectoFinal
             stopWatch.Restart();
             stopWatch.Start();
 
-            /*
-            Ciclo for para iniciar el algotimo de conversion.
-            */
+            
 
             for (int j = 0; j < a.Height - 1; j++)
             {
@@ -183,9 +153,7 @@ namespace ProyectoFinal
             tiempo = (long)(stopWatch.Elapsed.TotalMilliseconds);
             Console.WriteLine("Resultado " + r + ": " + tiempo);
 
-            /*
-            Guardamos la imagen en la carpeta correspondiente
-            */
+            
             String ruta = Path.GetDirectoryName(Process.GetCurrentProcess().MainModule.FileName);
             String rutaImagen = ruta + @"\Images\ImagesInver\imgReverse_T[" + tamanio + "]P[" + profundidad + "].bmp";
 
@@ -200,15 +168,11 @@ namespace ProyectoFinal
         static void version4(String src, int profundidad, int tamanio)
         {
 
-            /*
-            Variable donde se carga los bits de la imagen.
-            */
-            Bitmap imagenOriginal = new Bitmap(src);
+           
+            Bitmap imgParam = new Bitmap(src);
 
-            Bitmap a = imagenOriginal;
-            /*
-            Variable de color 
-            */
+            Bitmap a = imgParam;
+          
             Color color;
 
             long tiempo = 0;
@@ -217,14 +181,6 @@ namespace ProyectoFinal
             stopWatch.Start();
 
 
-
-            /*
-            Ciclos for para iniciar el algotimo de conversion.
-            */
-
-            /*
-            Ciclo No. 1
-            */
             for (int i = 0; i < a.Height - 1; i++)
             {
                 for (int j = 0; j < a.Width - 1; j++)
@@ -235,9 +191,6 @@ namespace ProyectoFinal
                 }
             }
 
-            /*
-            Ciclo No. 2
-            */
             for (int i = 0; i < a.Height - 1; i++)
             {
                 for (int j = 0; j < a.Width - 1; j++)
@@ -254,9 +207,7 @@ namespace ProyectoFinal
             tiempo = (long)(stopWatch.Elapsed.TotalMilliseconds);
             Console.WriteLine("Resultado " + r + ": " + tiempo);
 
-            /*
-            Guardamos la imagen en la carpeta correspondiente
-            */
+          
             String ruta = Path.GetDirectoryName(Process.GetCurrentProcess().MainModule.FileName);
             String rutaImagen = ruta + @"\Images\ImagesInver\imgReverse_T[" + tamanio + "]P[" + profundidad + "].bmp";
 
@@ -269,28 +220,19 @@ namespace ProyectoFinal
          */
         static void version5(String src, int profundidad, int tamanio)
         {
-            /*
-            Variable donde se carga los bits de la imagen.
-            */
-            Bitmap imagenOriginal = new Bitmap(src);
+           
+            Bitmap imgParam = new Bitmap(src);
 
-            Bitmap a = imagenOriginal;
-            /*
-            Variable de color 
-            */
+            Bitmap a = imgParam;
+          
             Color color;
-            /*
-            Variable de tiempo
-            */
+            
             long tiempo = 0;
             Stopwatch stopWatch = new Stopwatch();
             stopWatch.Restart();
             stopWatch.Start();
 
-            /*
-            Ciclos for para iniciar el algotimo de conversion.
-            */
-
+         
             for (int i = 0; i < a.Height - 2; i += 2)
             {
                 for (int j = 0; j < a.Width - 2; j += 2)
@@ -314,20 +256,12 @@ namespace ProyectoFinal
                 }
             }
 
-            /*
-            Detenemos el reloj
-            */
             stopWatch.Stop();
 
-            /*
-            Recolectamos la información
-            */
             tiempo = (long)(stopWatch.Elapsed.TotalMilliseconds);
             Console.WriteLine("Resultado " + r + ": " + tiempo);
 
-            /*
-            Guardamos la imagen en la carpeta correspondiente
-            */
+           
             String ruta = Path.GetDirectoryName(Process.GetCurrentProcess().MainModule.FileName);
             String rutaImagen = ruta + @"\Images\ImagesInver\imgReverse_T[" + tamanio + "]P[" + profundidad + "].bmp";
 
@@ -343,13 +277,13 @@ namespace ProyectoFinal
              Variable que almacena la version del algoritmo. 
              Valores enteros entre 1 y 5.
              */
-            int versionAlgoritmo = 5;
+            int versionAlgoritmo = 1;
 
             /*
              Variable que almacena el tamanio de la imagen que será utilizada. 
              Pueden ser los siguientes valores: 400, 700, 1000, 1300, 1600, 1900, 2200, 2500
              */
-            int tamanioImagen = 2500;
+            int tamanioImagen = 400;
 
             /*
              Variable que almacena la profundidad de la imagen que será utilizada. 
@@ -400,12 +334,6 @@ namespace ProyectoFinal
                 }
 
             }
-
-
-
-
-
-
 
 
 
