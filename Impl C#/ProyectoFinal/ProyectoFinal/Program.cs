@@ -56,7 +56,7 @@ namespace ProyectoFinal
             /*
             Se calcula el tiempo
             */
-            tiempo = (long)(stopWatch.Elapsed.TotalMilliseconds * 1000000);
+            tiempo = (long)(stopWatch.Elapsed.TotalMilliseconds);
             Console.WriteLine("Resultado " + r + ": " + tiempo);
 
             /*
@@ -131,7 +131,7 @@ namespace ProyectoFinal
 
             stopWatch.Stop();
 
-            tiempo = (long)(stopWatch.Elapsed.TotalMilliseconds * 1000000);
+            tiempo = (long)(stopWatch.Elapsed.TotalMilliseconds);
             Console.WriteLine("Resultado " + r + ": " + tiempo);
 
             /*
@@ -180,7 +180,7 @@ namespace ProyectoFinal
             stopWatch.Stop();
 
 
-            tiempo = (long)(stopWatch.Elapsed.TotalMilliseconds * 1000000);
+            tiempo = (long)(stopWatch.Elapsed.TotalMilliseconds);
             Console.WriteLine("Resultado " + r + ": " + tiempo);
 
             /*
@@ -251,7 +251,7 @@ namespace ProyectoFinal
             stopWatch.Stop();
 
 
-            tiempo = (long)(stopWatch.Elapsed.TotalMilliseconds * 1000000);
+            tiempo = (long)(stopWatch.Elapsed.TotalMilliseconds);
             Console.WriteLine("Resultado " + r + ": " + tiempo);
 
             /*
@@ -322,7 +322,7 @@ namespace ProyectoFinal
             /*
             Recolectamos la información
             */
-            tiempo = (long)(stopWatch.Elapsed.TotalMilliseconds * 1000000);
+            tiempo = (long)(stopWatch.Elapsed.TotalMilliseconds);
             Console.WriteLine("Resultado " + r + ": " + tiempo);
 
             /*
