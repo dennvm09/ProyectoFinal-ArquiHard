@@ -1,4 +1,4 @@
-# Developed by:
+Developed by:
 
 Victor Mora: 
 
