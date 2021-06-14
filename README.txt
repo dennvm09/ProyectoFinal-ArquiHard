@@ -1,5 +1,4 @@
 Developed by:
 
-Victor Mora: 
-
-Dennys Mosquera:
+Victor Mora
+Dennys Mosquera
